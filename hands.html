@@ -1,28 +1,26 @@
-
 <!--
     MediaPipe Hands
     https://google.github.io/mediapipe/solutions/hands.html#javascript-solution-api
 -->
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.3/control_utils_3d.css" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/control_utils_3d.css" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/control_utils.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="hands.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3/camera_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.6/control_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils_3d@0.3/control_utils_3d.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3/drawing_utils.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4/hands.js" crossorigin="anonymous"></script>
-  
+    <script src="/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="/control_utils.js" crossorigin="anonymous"></script>
+    <script src="/control_utils_3d.js" crossorigin="anonymous"></script>
+    <script src="/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="/hands-mediapipe.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <style>
-      .square-box {
+        .square-box {
         width: 33%;
         height: 0;
         padding-top: 33%;
@@ -39,40 +37,34 @@
         left:0;
         background-color: #99999999;
       }
+      .logo {
+        visibility: hidden;
+      }
     </style>
     <div class="container">
-      <video class="input_video"></video>
-      <canvas class="output_canvas" width="1280px" height="720px"></canvas>
-      <div class="loading">
-        <div class="spinner"></div>
-        <div class="message">
-          Loading
+        <video class="input_video"></video>
+        <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+        <div class="loading">
+            <div class="spinner"></div>
+            <div class="message">
+                Loading
+            </div>
         </div>
-      </div>
-      <a class="abs logo" href="http://www.mediapipe.dev" target="_blank">
-        <div style="display: flex;align-items: center;bottom: 0;right: 10px;">
-          <img class="logo" src="./img/logo_white.png" alt="" style="
+        <a class="abs logo" href="http://www.mediapipe.dev" target="_blank">
+            <div style="display: flex;align-items: center;bottom: 0;right: 10px;">
+                <img class="logo" src="./img/logo_white.png" alt="" style="
             height: 50px;">
-          <span class="title">MediaPipe</span>
-        </div>
-      </a>
-      <div class="shoutout">
-        <div>
-          <a href="https://solutions.mediapipe.dev/pose" target="_blank">
-            Click here for more info
-          </a>
-        </div>
-      </div>
+                <span class="title">MediaPipe</span>
+            </div>
+        </a>
     </div>
-    <div class="control-panel">
+    <div class="control-panel" style="visibility: hidden">
     </div>
     <div class='square-box'>
-      <div class="landmark-grid-container">
-      </div>
+        <div class="landmark-grid-container">
+        </div>
     </div>
 </body>
 
 </html>
-
-
 <script type="module" src="hands.js"></script>
